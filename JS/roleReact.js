@@ -20,6 +20,10 @@ const botToken = "NTU3NTc2NzQzODEzMjUxMTEy.D3KT1w.3bEK0CsU6g3a4va0ciUJlq4F4sg";
  */
 
 // Import classes and load client
+
+let cooldown = new Set();
+let cdseconds = 43200;
+
 const { Client, RichEmbed } = require('discord.js');
 const client = new Client({ disableEveryone: true });
 client.login(botToken);
@@ -76,6 +80,23 @@ client.on("message", message => {
             });
         }
     }
+
+    if (cooldown.has (message.author.id)) {
+        message.delete();
+        message.reply("You have to wait 12 hours.").then (msg => {
+            msg.delete (10000)
+        })
+    }
+
+    if (!message.member.hasPermission("ADMINISTRATOR")) {
+        cooldown.add(message.author.id);
+        console.log ("Admin message")
+    }
+
+
+    setTimeout (() => {
+        cooldown.delete (message.author.id)
+    }, cdseconds * 1000) 
 });
 
 // This makes the events used a bit more readable
