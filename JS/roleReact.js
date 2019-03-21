@@ -1,4 +1,4 @@
-// Configuration & Settings
+﻿// Configuration & Settings
 const yourID = "253514520142544899"; //Instructions on how to get this: https://redd.it/40zgse
 const setupCMD = "!createrolemessage"
 const initialMessage = `**React to the messages below to receive the associated role. If you would like to remove the role, simply remove your reaction!**`;
@@ -23,6 +23,7 @@ const botToken = "NTU3NTc2NzQzODEzMjUxMTEy.D3KT1w.3bEK0CsU6g3a4va0ciUJlq4F4sg";
 
 let cooldown = new Set();
 let cdseconds = 43200;
+let cdchannel = "557978796364398596";
 
 const { Client, RichEmbed } = require('discord.js');
 const client = new Client({ disableEveryone: true });
@@ -82,13 +83,14 @@ client.on("message", message => {
     }
 
     if (cooldown.has (message.author.id)) {
-        message.delete();
-        message.reply("You have to wait 12 hours.").then (msg => {
-            msg.delete (10000)
-        })
+        if (message.channel.id == cdchannel) {
+            message.delete();
+            message.reply("You have to wait 12 hours.").then (msg => {
+                msg.delete (10000)
+        }) }
     }
 
-    if (!message.member.hasPermission("ADMINISTRATOR")) {
+    if (!message.member.hasPermission("KICK_MEMBERS")) {
         cooldown.add(message.author.id);
         console.log ("Admin message")
     }
