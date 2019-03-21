@@ -23,7 +23,7 @@ const botToken = "NTU3NTc2NzQzODEzMjUxMTEy.D3KT1w.3bEK0CsU6g3a4va0ciUJlq4F4sg";
 
 let cooldown = new Set();
 let cdseconds = 43200;
-let cdchannel = "557978796364398596";
+let cdchannel = "524536921821675530";
 
 const { Client, RichEmbed } = require('discord.js');
 const client = new Client({ disableEveryone: true });
@@ -92,7 +92,6 @@ client.on("message", message => {
 
     if (!message.member.hasPermission("KICK_MEMBERS")) {
         cooldown.add(message.author.id);
-        console.log ("Admin message")
     }
 
 
