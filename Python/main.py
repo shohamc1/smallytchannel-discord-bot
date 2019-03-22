@@ -3,7 +3,7 @@ from discord.ext import commands
 from discord.ext.commands import has_permissions, CheckFailure, BadArgument
 from discord.utils import get
 
-token = 'NTU3NTc2NzQzODEzMjUxMTEy.D3KT1w.3bEK0CsU6g3a4va0ciUJlq4F4sg'
+token = '' #enter your own token here
 
 client = commands.Bot (command_prefix = '.')
 

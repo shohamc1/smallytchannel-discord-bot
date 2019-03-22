@@ -12,7 +12,7 @@ const roles = ["Gamer", "Vlog", "Tutorial"];
 const reactions = ["🎮", "📹", "📔"];
 const embed = true; // Set to "true" if you want all roles to be in a single embed
 const embedColor = "#dd2423"; // Set the embed color if the "embed" variable is set to true
-const botToken = "NTU3NTc2NzQzODEzMjUxMTEy.D3KT1w.3bEK0CsU6g3a4va0ciUJlq4F4sg";
+const botToken = ""; //enter your own token here!
 /**
  * You'll have to set this up yourself! Read more below:
  * 
