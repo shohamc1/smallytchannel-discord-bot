@@ -8,11 +8,11 @@ React to the emoji that matches the role you wish to receive.
 If you would like to remove the role, simply remove your reaction!
 `;
 const embedFooter = "Role Reactions"; // Must set this if "embed" is set to true
-const roles = ["Gamer", "Vlog", "Tutorial"];
-const reactions = ["🎮", "📹", "📔"];
+const roles = ["Gaming", "Vlogging", "Education", "Commentary", "Review"];
+const reactions = ["🎮", "📹", "📔", "🔈", "🎭"];
 const embed = true; // Set to "true" if you want all roles to be in a single embed
 const embedColor = "#dd2423"; // Set the embed color if the "embed" variable is set to true
-const botToken = ""; //enter your own token here!
+const botToken = "NTU3NTc2NzQzODEzMjUxMTEyD3KT1w.3bEK0CsU6g3a4va0ciUJlq4F4sg";
 /**
  * You'll have to set this up yourself! Read more below:
  * 
